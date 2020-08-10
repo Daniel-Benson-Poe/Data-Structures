@@ -1,3 +1,9 @@
+# Linked Lists:
+#   1. Store things in sequential order
+#   2. Values stored in their own node
+#       + Class we represent that has a value and a next_node
+#       + Each node ONLY knows the value inside itself and its next node.
+
 class Node:
     def __init__(self, value, next_node=None):
         # value the node is holding
@@ -92,36 +98,17 @@ class LinkedList:
             # return the old head's value
             return val
 
-    def contains(self, value):
-        if not self.head:
-            return False
 
-        # get a reference to the node we're currently at
-        # update this as we traverse the list
-        current = self.head
-        # check to see if we're at a valid node
-        while current:
-            # return True if current value we're looking at matches target value
-            if current.get_value() == value:
-                return True
-            # update our current node to the current node's next node
-            current = current.get_next()
-        # if we've gotten here, then the taget node isn't in our list
-        return False
 
-    def get_max(self):
-        if not self.head:
-            return None
-        # reference to the largest value we've seen so far
-        max_value = self.head.get_value()
-        # reference to our current node as we traverse the list
-        current = self.head.get_next()
-        # check to see if we're still at a valid list node
-        while current:
-            # check to see if the current value is greater than the max value
-            if current.get_value() > max_value:
-                # if so, update our max value variable
-                max_value = curent.get_value()
-            # update the current node to the next node in the list
-            current = current.get_next()
-        return max_value
+if __name__ == "__main__":
+    ll = LinkedList()  # Head -> None, Tail -> None
+    ll.add_to_tail(5)
+    # ll = Node(5)
+    # ll.add_to_end(7)
+    # ll.add_to_end(18)
+    # ll.add_to_end(22)
+    # ll.add_to_end(3)
+    # ll.set_next(Node(7))
+    # ll.next.set_next(Node(18))
+    # ll.next.next.set_next(Node(22))
+    # ll.next.next.next.set_next(Node(3))
