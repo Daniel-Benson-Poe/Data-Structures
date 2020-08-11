@@ -19,26 +19,26 @@ Stretch: What if you could only use instances of your Stack class to implement t
 # class Queue:
 #     def __init__(self):
 #         # self.size = 0
-#         self.storage = []  # using an array
+#         self.storage = []  # using an array as storage
     
 #     def __len__(self):
 #         return len(self.storage)  # return length of the queue array
 
 #     def enqueue(self, value):
-#         # appnd value to the end of the array
+#         # append value to the end of the array
 #         self.storage.append(value)
 
 #     def dequeue(self):
-#         if len(self.storage) > 0:
+#         if len(self.storage) > 0:  # check that there are values in the queue
 #             # remove value from the front of the list - this is our first in first out
 #             return self.storage.pop(0)
-#         return None
+#         return None  # If there are no values in the queue, return None
 
 # Using linked list:
 class Queue:
     def __init__(self):
         self.size = 0
-        self.storage = LinkedList()
+        self.storage = LinkedList()  # using linked list as storage
     
     def __len__(self):
         return self.size  # return size of the queue
@@ -46,11 +46,11 @@ class Queue:
     def enqueue(self, value):
         # insert tail to the queue
         self.storage.add_to_tail(value)
-        self.size += 1
+        self.size += 1  # increment size of queue by 1
 
     def dequeue(self):
-        if self.size > 0:
-            val = self.storage.remove_head()
-            self.size -= 1
-            return val
-        return None
+        if self.size > 0:  # Check that there are items in the queue
+            val = self.storage.remove_head()  # remove head of queue (first node) and store the value of the node removed
+            self.size -= 1  # decrement size by 1
+            return val  # return value of the removed node
+        return None  # if there is nothing in the queue, return None
