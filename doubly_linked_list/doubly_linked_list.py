@@ -89,7 +89,6 @@ class DoublyLinkedList:
         if self.tail.prev is None:  # check if there is only one node in the linked list
             self.head = None  # set current head node to None
             self.tail = None  # set current tail node to None
-            self.length = 0  # set length of linked list to 0; the linked list is currently empty
         else:  # if there is more than 1 node in the linked list
             self.tail = self.tail.prev  # set tail to current tail's previous node
             self.tail.next = None  # set new tail's next node to None
@@ -103,7 +102,7 @@ class DoublyLinkedList:
     def move_to_front(self, node):
         if self.head is None and self.tail is None:  # check if there are no nodes present in the linked list
             return  # return None; linked list is empty
-        current = self.tail  # set current node to the current tail node
+        current = self.tail  # set current node to the current taild node
         while current is not node:  # check if the current node is equal to the node we are searching for
             current = current.prev  # set current to current's previous node
         moved_node = current  # set current node into temp variable for storage
@@ -149,12 +148,11 @@ class DoublyLinkedList:
         if self.head is None and self.tail is None:  # check if there are no nodes present in the linked list
             return  # return None; linked list is empty
         current = self.head  # set current node to current head node
-        while currrent is not node:  # check if current node is target node
+        while current is not node:  # check if current node is target node
             current = current.next  # set current node to current node's next node
         if current.prev is None and current.next is None:  # check if there is only one node in linked list
             self.head = None  # set head node to None
             self.tail = None  # set tail node to None
-            self.length = 0  # set length of linked list to 0; linked list is now empty
         elif current.prev is None:  # check if current node is the head node
             self.head = self.head.next  # set head node to current head node's next node
             self.head.prev = None  # set new head node's previous node to None
